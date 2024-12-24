@@ -1,0 +1,20 @@
+@local=http://localhost:4000
+
+POST {{local}}/api/users
+Content-Type: application/json
+
+{
+    "name": {
+        "first": "noam",
+        "middle": "nono",
+        "last": "Abramovich"
+    },
+    "isBusiness": "true",
+    "phone": "050502120",
+    "email": "noam@email.com",
+    "password": "Aa123456",
+    "image": {
+        "url": "https://i.pinimg.com/236x/33/d0/a2/33d0a23afdc4112ae4c984cb39dcad22.jpg",
+        "alt": "IT WAS YOU!"
+    } 
+}
