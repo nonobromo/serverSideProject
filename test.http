@@ -5,16 +5,72 @@ Content-Type: application/json
 
 {
     "name": {
-        "first": "noam",
-        "middle": "nono",
-        "last": "Abramovich"
+        "first": "normal",
+        "middle": "the",
+        "last": "regular"
     },
     "isBusiness": "true",
     "phone": "050502120",
-    "email": "noam@email.com",
+    "email": "normal@email.com",
+    "address": {
+        "country": "Israel",
+        "city": "Haifa",
+        "street": "this street",
+        "houseNumber": 1
+    },
     "password": "Aa123456",
     "image": {
         "url": "https://i.pinimg.com/236x/33/d0/a2/33d0a23afdc4112ae4c984cb39dcad22.jpg",
         "alt": "IT WAS YOU!"
-    } 
+    },
+    "isAdmin": "false"
+}
+
+
+###
+
+POST {{local}}/api/auth/
+Content-Type: application/json
+
+{
+    "email": "normal@email.com",
+    "password": "Aa123456"
+}
+
+###
+
+GET {{local}}/api/users/676c033f484182ba9cdc3343
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMDM1YjQ4NDE4MmJhOWNkYzMzNDYiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1MTMyMjE4fQ.uwO-L8_lTYE7qaN7A053GjE9bChzdn5aaaVfkRrq3G0
+###
+
+GET {{local}}/api/users/allUsers
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMDMwODQ4NDE4MmJhOWNkYzMzNDAiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzUxMzIwNjZ9.tWROFbyuFMMVgYW3CU38IrFE75lu7x3DYkaGLz0WP3c
+
+###
+
+PUT {{local}}/api/users/6769c214ce4c108373832878
+x-auth-token: 
+Content-Type: application/json
+
+{
+      "name": {
+        "first": "user",
+        "middle": "nono",
+        "last": "hector!!!!!!"
+    },
+    "isBusiness": "true",
+    "phone": "050502120",
+    "email": "noam@email.com",
+    "address": {
+        "country": "Israel",
+        "city": "Haifa",
+        "street": "this street",
+        "houseNumber": 1
+    },
+    "password": "Aa123456",
+    "image": {
+        "url": "https://i.pinimg.com/236x/33/d0/a2/33d0a23afdc4112ae4c984cb39dcad22.jpg",
+        "alt": "IT WAS YOU!!!!!!!"
+    },
+    "isAdmin": "true"
 }
