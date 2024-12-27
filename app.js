@@ -8,9 +8,11 @@ const PORT = 4000;
 
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth")
+const cardsRouter = require("./routes/cards")
 app.use(express.json());
 app.use("/api/users", usersRouter);
 app.use("/api/auth", authRouter);
+app.use ("api/cards", cardsRouter)
 
 connect();
 

@@ -1,17 +1,21 @@
 @local=http://localhost:4000
+@admintoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMDMwODQ4NDE4MmJhOWNkYzMzNDAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzUyMjY4NjR9.HR58ejjrMBFaUFobOHwShEFrKv9YjynLYbXdmtwOEQ4
+@biztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNzAyNjJhYWMzMTM1OTNjMjAxODgiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1MjI1NTIwfQ.d1LoSCJLv9hcsHU0H9gXdy7JngZgy0RMz1qGAQe2qh0
+@normaltoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNDZmMGEwYTIyNzdjMmE5NGJlYTgiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1MjI1MTM2fQ.Vygn-jAoNFcXJoeyd4p506CINPUM0KRKEurLm6c3mWA
 
+###
 POST {{local}}/api/users
 Content-Type: application/json
 
 {
     "name": {
-        "first": "normal",
+        "first": "biz",
         "middle": "the",
-        "last": "regular"
+        "last": "bizman"
     },
     "isBusiness": "true",
     "phone": "050502120",
-    "email": "normal@email.com",
+    "email": "biz@email.com",
     "address": {
         "country": "Israel",
         "city": "Haifa",
@@ -33,18 +37,18 @@ POST {{local}}/api/auth/
 Content-Type: application/json
 
 {
-    "email": "normal@email.com",
+    "email": "admin@email.com",
     "password": "Aa123456"
 }
 
 ###
 
-GET {{local}}/api/users/676c033f484182ba9cdc3343
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMDM1YjQ4NDE4MmJhOWNkYzMzNDYiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1MTMyMjE4fQ.uwO-L8_lTYE7qaN7A053GjE9bChzdn5aaaVfkRrq3G0
+GET {{local}}/api/users/676d46f0a0a2277c2a94bea8
+x-auth-token: {{normaltoken}}
 ###
 
 GET {{local}}/api/users/allUsers
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMDMwODQ4NDE4MmJhOWNkYzMzNDAiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzUxMzIwNjZ9.tWROFbyuFMMVgYW3CU38IrFE75lu7x3DYkaGLz0WP3c
+x-auth-token: {{admintoken}}
 
 ###
 
@@ -74,3 +78,8 @@ Content-Type: application/json
     },
     "isAdmin": "true"
 }
+
+###
+
+DELETE {{local}}/api/users/676d6fbb2aac313593c20182
+x-auth-token: {{biztoken}}

@@ -9,6 +9,17 @@ const adminAuth = require("../middleware/adminAuth")
 const authMW = require("../middleware/auth");
 const userAuth = require("../middleware/userAuth");
 
+router.delete("/:id", [authMW, userAuth], async (req,res) =>{
+  const user = await User.findOneAndDelete({_id: req.params.id});
+
+  if (!user){
+    res.status(404).send("The user with the given id was not found");
+    return;
+  }
+
+  res.send(`The user: ${user.name.first}, ${user.name.last} was deleted`)
+})
+
 
 router.put("/:id", [authMW, userAuth, adminAuth], async (req,res) =>{
   const { error } = validateUserSchema(req.body);
@@ -24,13 +35,13 @@ res.send(user)
 
 })
 
-router.get("/allUsers", [authMW, adminAuth], async (req, res) =>{
+router.get("/allUsers", [authMW, userAuth], async (req, res) =>{
   const users = await User.find();
 
   res.json(users)
 })
 
-router.get("/:id", [authMW, adminAuth], async(req, res) =>{
+router.get("/:id", [authMW, userAuth], async(req, res) =>{
     res.json(await User.findById({_id: req.params.id, user_id: req.user._id}, {password: 0}))
 })
 

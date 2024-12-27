@@ -34,7 +34,7 @@ if(!validPassword){
     return;
 }
 
-const token = jwt.sign({_id: user._id, biz: user.biz, isAdmin: user.isAdmin}, process.env.JWT_TOKEN);
+const token = jwt.sign({_id: user._id, isBusiness: user.isBusiness, isAdmin: user.isAdmin}, process.env.JWT_TOKEN);
 
 res.send({
     token

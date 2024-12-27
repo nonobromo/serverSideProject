@@ -1,17 +1,13 @@
-const { User } = require("../models/users")
+module.exports = async (req, res, next) => {
+    const userId = req.user;
 
- module.exports = async (req, res, next) =>{
-    const userId = req.user
-
-    
-    try{
-        if (userId._id !== req.params.id){
-            res.status(400).send('not the correct user');
-            return
+    try {
+        if (userId._id.toString() === req.params.id || userId.isAdmin) {
+            next();
+        } else {
+            res.status(401).send("Must be the registered user or admin");
         }
-        next()
-    }catch{
-        res.status(401).send("No auth");
+    } catch (error) {
+        res.status(401).send("Must be the registered user or admin");
     }
-
 }

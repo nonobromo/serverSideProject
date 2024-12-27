@@ -11,6 +11,7 @@ module.exports = (req, res, next) =>{
         try{
             const payload = jwt.verify(token, config.jwtKey);
             req.user = payload;
+            console.log(payload)
             next()
         }catch{
             res.status(400).send("invalid token")

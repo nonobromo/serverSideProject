@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
+const _ = require("lodash");
 
 const cardSchema = mongoose.Schema({
   title: { type: String, required: true, minlength: 2, maxlength: 255 },
@@ -24,10 +25,16 @@ const cardSchema = mongoose.Schema({
     },
     zip: { type: String, requried: true, minlength: 2 },
   },
+  bizNumber: {type: Number, required: true, min: 100, max: 9_999_999_999, unique: true},
   user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 
 const Card = mongoose.Model("Card", cardSchema, "cards");
+
+
+async function generateRandomBizNumber(){
+  
+}
 
 function validateCardSchema(card) {
   const schema = Joi.object({
