@@ -4,24 +4,38 @@ const _ = require("lodash");
 const bcrypt = require("bcrypt");
 
 const { User, validateUserSchema } = require("../models/users");
-const adminAuth = require("../middleware/adminAuth")
+const adminAuth = require("../middleware/adminAuth");
 
 const authMW = require("../middleware/auth");
 const userAuth = require("../middleware/userAuth");
 
-router.delete("/:id", [authMW, userAuth], async (req,res) =>{
-  const user = await User.findOneAndDelete({_id: req.params.id});
+router.patch("/:id", [authMW, userAuth], async (req, res) => {
+  const user = await User.findOne({ _id: req.user._id });
 
-  if (!user){
+  if (!user) {
+    res.status(400).send("User with the given id was not found");
+    return;
+  }
+
+  user.isBusiness = !user.isBusiness;
+
+  await user.save();
+
+  res.send(user);
+});
+
+router.delete("/:id", [authMW, userAuth], async (req, res) => {
+  const user = await User.findOneAndDelete({ _id: req.params.id });
+
+  if (!user) {
     res.status(404).send("The user with the given id was not found");
     return;
   }
 
-  res.send(`The user: ${user.name.first}, ${user.name.last} was deleted`)
-})
+  res.send(`The user: ${user.name.first}, ${user.name.last} was deleted`);
+});
 
-
-router.put("/:id", [authMW, userAuth, adminAuth], async (req,res) =>{
+router.put("/:id", [authMW, userAuth, adminAuth], async (req, res) => {
   const { error } = validateUserSchema(req.body);
 
   if (error) {
@@ -29,21 +43,26 @@ router.put("/:id", [authMW, userAuth, adminAuth], async (req,res) =>{
     return;
   }
 
-  const user = await User.findOneAndUpdate({_id: req.params.id}, req.body, {returnDocument: "after"})
-res.send(user)
+  const user = await User.findOneAndUpdate({ _id: req.params.id }, req.body, {
+    returnDocument: "after",
+  });
+  res.send(user);
+});
 
-
-})
-
-router.get("/allUsers", [authMW, userAuth], async (req, res) =>{
+router.get("/allUsers", [authMW, userAuth], async (req, res) => {
   const users = await User.find();
 
-  res.json(users)
-})
+  res.json(users);
+});
 
-router.get("/:id", [authMW, userAuth], async(req, res) =>{
-    res.json(await User.findById({_id: req.params.id, user_id: req.user._id}, {password: 0}))
-})
+router.get("/:id", [authMW, userAuth], async (req, res) => {
+  res.json(
+    await User.findById(
+      { _id: req.params.id, user_id: req.user._id },
+      { password: 0 }
+    )
+  );
+});
 
 router.post("/", async (req, res) => {
   const { error } = validateUserSchema(req.body);

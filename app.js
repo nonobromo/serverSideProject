@@ -1,18 +1,18 @@
-require("dotenv").config()
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const cors = require("cors")
-app.use(cors())
+const cors = require("cors");
+app.use(cors());
 const PORT = 4000;
 
 const usersRouter = require("./routes/users");
-const authRouter = require("./routes/auth")
-const cardsRouter = require("./routes/cards")
+const authRouter = require("./routes/auth");
+const cardsRouter = require("./routes/cards");
 app.use(express.json());
 app.use("/api/users", usersRouter);
 app.use("/api/auth", authRouter);
-app.use ("api/cards", cardsRouter)
+app.use("/api/cards", cardsRouter);
 
 connect();
 

@@ -1,11 +1,83 @@
-@local=http:/localhost:4000
+@biztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNzAyNjJhYWMzMTM1OTNjMjAxODgiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1MjkzMzY5fQ.YrDkgP6GWsR8OS8kvBRzCeC7bemF-FQBCGEXQ60Itnc
+@admintoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMDMwODQ4NDE4MmJhOWNkYzMzNDAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzUyOTk0NjZ9.RohlcqrTl6tMxUAm3ZeYYN_OOQ1CvP8T8z_oI43KfxI
+
+@otherbiztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmZWVmODkzNGRlN2M2MTY1N2FhZWQiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1Mzg4OTQ3fQ.GeIE0PwYO5LLBjveJ0IXU2rXF90VoSeMvYzZDMsEwyw
+
+@local=http://localhost:4000
 
 ###
 
 POST {{local}}/api/cards
-x-auth-token:
+x-auth-token: {{otherbiztoken}}
 Content-Type: application/json
 
 {
-    
+    "title": "array",
+    "subtitle": "type",
+    "description": "card with likes array",
+    "phone": "050120134",
+    "email": "delete.email.com",
+    "web": "https://jsonplaceholder.typicode.com/",
+    "image": {
+        "url": "https://blog.stoplight.io/wp-content/uploads/2023/11/20190403-JSON-Generator-for-Mock-API-Data.png",
+        "alt": "api"
+    },
+    "address": {
+        "state": "texas",
+        "country": "united states",
+        "city": "austin",
+        "street": "nowherestr",
+        "houseNumber": 10,
+        "zip": "23"
+    }
 }
+
+###
+
+GET {{local}}/api/cards
+
+###
+
+GET {{local}}/api/cards/my-cards
+x-auth-token: {{admintoken}}
+
+###
+
+GET {{local}}/api/cards/676e820ed77c6c13537e2368
+
+###
+
+PUT {{local}}/api/cards/676e820ed77c6c13537e2368
+x-auth-token: {{admintoken}}
+Content-Type: application/json
+
+{
+    "title": "busy",
+    "subtitle": "the",
+    "description": "business",
+    "phone": "050120134",
+    "email": "test.email.com",
+    "web": "https://jsonplaceholder.typicode.com/",
+    "image": {
+        "url": "https://blog.stoplight.io/wp-content/uploads/2023/11/20190403-JSON-Generator-for-Mock-API-Data.png",
+        "alt": "api"
+    },
+    "address": {
+        "state": "new york",
+        "country": "united states",
+        "city": "manhaten",
+        "street": "nowherestr",
+        "houseNumber": 10,
+        "zip": "23"
+    }
+}
+
+###
+
+DELETE {{local}}/api/cards/67700082764a240d8099ba1b
+x-auth-token: {{biztoken}}
+
+###
+
+PATCH {{local}}/api/cards/67700bfe659c2d0f392316b2
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmZWVmODkzNGRlN2M2MTY1N2FhZWQiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1Mzk5NDkyfQ.pYbB02Dvhlp3uJK5Qp-Bkw27bfFK8-MzleB_j_SYmn8

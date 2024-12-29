@@ -9,13 +9,13 @@ Content-Type: application/json
 
 {
     "name": {
-        "first": "biz",
-        "middle": "the",
-        "last": "bizman"
+        "first": "another",
+        "middle": "niz",
+        "last": "account"
     },
     "isBusiness": "true",
     "phone": "050502120",
-    "email": "biz@email.com",
+    "email": "bizzy@email.com",
     "address": {
         "country": "Israel",
         "city": "Haifa",
@@ -37,7 +37,7 @@ POST {{local}}/api/auth/
 Content-Type: application/json
 
 {
-    "email": "admin@email.com",
+    "email": "bizzy@email.com",
     "password": "Aa123456"
 }
 
@@ -83,3 +83,7 @@ Content-Type: application/json
 
 DELETE {{local}}/api/users/676d6fbb2aac313593c20182
 x-auth-token: {{biztoken}}
+
+###
+PATCH {{local}}/api/users/676d6fbb2aac313593c20182
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNmZiYjJhYWMzMTM1OTNjMjAxODIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1Mzk3MjYxfQ.YcGIuj4MMaGwihYfCpf6p56OblBXOJub-Lsyxb5s9Qg

@@ -2,16 +2,16 @@ const mongoose = require("mongoose");
 const Joi = require("joi");
 const _ = require("lodash");
 
-const cardSchema = mongoose.Schema({
+const cardSchema = new mongoose.Schema({
   title: { type: String, required: true, minlength: 2, maxlength: 255 },
   subtitle: { type: String, required: true, minlength: 2, maxlength: 255 },
   description: { type: String, required: true, minlength: 2, maxlength: 255 },
   phone: { type: String, required: true, minlength: 9, maxlength: 10 },
   email: { type: String, required: true, minlength: 6, maxlength: 1024 },
-  web: { type: string, required: true, minlength: 20, maxlength: 1024 },
+  web: { type: String, required: true, minlength: 20, maxlength: 1024 },
   image: {
-    url: { type: string, required: true, minlength: 20, maxlength: 1024 },
-    alt: { type: string, required: true, minlength: 2, maxlength: 255 },
+    url: { type: String, required: true, minlength: 20, maxlength: 1024 },
+    alt: { type: String, required: true, minlength: 2, maxlength: 255 },
   },
   address: {
     state: { type: String, minlength: 1 },
@@ -25,15 +25,27 @@ const cardSchema = mongoose.Schema({
     },
     zip: { type: String, requried: true, minlength: 2 },
   },
-  bizNumber: {type: Number, required: true, min: 100, max: 9_999_999_999, unique: true},
+  bizNumber: {
+    type: Number,
+    required: true,
+    min: 100,
+    max: 9_999_999_999,
+    unique: true,
+  },
   user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  likes: { type: [String], default: [] },
 });
 
-const Card = mongoose.Model("Card", cardSchema, "cards");
+const Card = mongoose.model("Card", cardSchema, "cards");
 
-
-async function generateRandomBizNumber(){
-  
+async function generateRandomBizNumber() {
+  while (true) {
+    const random = _.random(100, 9_999_999_999);
+    const card = await Card.findOne({ bizNumber: random });
+    if (!card) {
+      return random;
+    }
+  }
 }
 
 function validateCardSchema(card) {
@@ -61,4 +73,4 @@ function validateCardSchema(card) {
   return schema.validate(card);
 }
 
-module.exports = { Card, validateCardSchema };
+module.exports = { Card, validateCardSchema, generateRandomBizNumber };
