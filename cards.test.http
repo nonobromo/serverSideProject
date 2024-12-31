@@ -3,29 +3,31 @@
 
 @otherbiztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmZWVmODkzNGRlN2M2MTY1N2FhZWQiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1Mzg4OTQ3fQ.GeIE0PwYO5LLBjveJ0IXU2rXF90VoSeMvYzZDMsEwyw
 
+@normaltoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmZWVkODkzNGRlN2M2MTY1N2FhZWEiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTczNTYzMTc0Nn0.VG7akF0U5EjBI7W8y9-vCesIJH5YGmF5jhZe_B8SIHA
+
 @local=http://localhost:4000
 
 ###
 
 POST {{local}}/api/cards
-x-auth-token: {{otherbiztoken}}
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNmZiYjJhYWMzMTM1OTNjMjAxODIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NjMyMDU5fQ.5kHAi1T71Z4YZxtV0tamddzwD7NZ_2gupkFlqUE68SY
 Content-Type: application/json
 
 {
-    "title": "array",
-    "subtitle": "type",
-    "description": "card with likes array",
+    "title": "Walter White",
+    "subtitle": "breaking bad",
+    "description": "High School Chemistiry teacher",
     "phone": "050120134",
-    "email": "delete.email.com",
+    "email": "saul.email.com",
     "web": "https://jsonplaceholder.typicode.com/",
     "image": {
         "url": "https://blog.stoplight.io/wp-content/uploads/2023/11/20190403-JSON-Generator-for-Mock-API-Data.png",
         "alt": "api"
     },
     "address": {
-        "state": "texas",
+        "state": "new mexico",
         "country": "united states",
-        "city": "austin",
+        "city": "alberququie",
         "street": "nowherestr",
         "houseNumber": 10,
         "zip": "23"
@@ -39,7 +41,7 @@ GET {{local}}/api/cards
 ###
 
 GET {{local}}/api/cards/my-cards
-x-auth-token: {{admintoken}}
+x-auth-token: {{biztoken}}
 
 ###
 
@@ -47,8 +49,8 @@ GET {{local}}/api/cards/676e820ed77c6c13537e2368
 
 ###
 
-PUT {{local}}/api/cards/676e820ed77c6c13537e2368
-x-auth-token: {{admintoken}}
+PUT {{local}}/api/cards/67739fb8eb5e3a9d8db7071e
+x-auth-token: {{otherbiztoken}}
 Content-Type: application/json
 
 {
@@ -74,8 +76,8 @@ Content-Type: application/json
 
 ###
 
-DELETE {{local}}/api/cards/67700082764a240d8099ba1b
-x-auth-token: {{biztoken}}
+DELETE {{local}}/api/cards/6773a510ae5bf62fc65a205d
+x-auth-token: {{otherbiztoken}}
 
 ###
 

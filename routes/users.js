@@ -35,7 +35,7 @@ router.delete("/:id", [authMW, userAuth], async (req, res) => {
   res.send(`The user: ${user.name.first}, ${user.name.last} was deleted`);
 });
 
-router.put("/:id", [authMW, userAuth, adminAuth], async (req, res) => {
+router.put("/:id", [authMW, userAuth], async (req, res) => {
   const { error } = validateUserSchema(req.body);
 
   if (error) {
@@ -90,7 +90,7 @@ router.post("/", async (req, res) => {
 
   //response
 
-  res.json(_.pick(user, ["name", "isBusiness", "phone", "email", "_id"]));
+  res.json(user);
 });
 
 module.exports = router;

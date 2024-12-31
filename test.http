@@ -9,13 +9,13 @@ Content-Type: application/json
 
 {
     "name": {
-        "first": "another",
-        "middle": "niz",
-        "last": "account"
+        "first": "john",
+        "middle": "normal",
+        "last": "Doe"
     },
     "isBusiness": "true",
     "phone": "050502120",
-    "email": "bizzy@email.com",
+    "email": "john@email.com",
     "address": {
         "country": "Israel",
         "city": "Haifa",
@@ -26,8 +26,7 @@ Content-Type: application/json
     "image": {
         "url": "https://i.pinimg.com/236x/33/d0/a2/33d0a23afdc4112ae4c984cb39dcad22.jpg",
         "alt": "IT WAS YOU!"
-    },
-    "isAdmin": "false"
+    }
 }
 
 
@@ -37,13 +36,13 @@ POST {{local}}/api/auth/
 Content-Type: application/json
 
 {
-    "email": "bizzy@email.com",
+    "email": "normal@email.com",
     "password": "Aa123456"
 }
 
 ###
 
-GET {{local}}/api/users/676d46f0a0a2277c2a94bea8
+GET {{local}}/api/users/67739d9c271d2d1cb6972da5
 x-auth-token: {{normaltoken}}
 ###
 
@@ -52,19 +51,19 @@ x-auth-token: {{admintoken}}
 
 ###
 
-PUT {{local}}/api/users/6769c214ce4c108373832878
-x-auth-token: 
+PUT {{local}}/api/users/67739d9c271d2d1cb6972da5
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzczOWQ5YzI3MWQyZDFjYjY5NzJkYTUiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NjMwMzYyfQ.u2I_jWs2H-hnE4abWCleZR4DZ_5EANxf8P2yzdIEPIs
 Content-Type: application/json
 
 {
       "name": {
-        "first": "user",
-        "middle": "nono",
-        "last": "hector!!!!!!"
+        "first": "johnny",
+        "middle": "normal",
+        "last": "Doe"
     },
     "isBusiness": "true",
     "phone": "050502120",
-    "email": "noam@email.com",
+    "email": "john@email.com",
     "address": {
         "country": "Israel",
         "city": "Haifa",
@@ -75,15 +74,14 @@ Content-Type: application/json
     "image": {
         "url": "https://i.pinimg.com/236x/33/d0/a2/33d0a23afdc4112ae4c984cb39dcad22.jpg",
         "alt": "IT WAS YOU!!!!!!!"
-    },
-    "isAdmin": "true"
+    }
 }
 
 ###
 
-DELETE {{local}}/api/users/676d6fbb2aac313593c20182
-x-auth-token: {{biztoken}}
+DELETE {{local}}/api/users/67739d9c271d2d1cb6972da5
+x-auth-token: {{admintoken}}
 
 ###
-PATCH {{local}}/api/users/676d6fbb2aac313593c20182
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNmZiYjJhYWMzMTM1OTNjMjAxODIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1Mzk3MjYxfQ.YcGIuj4MMaGwihYfCpf6p56OblBXOJub-Lsyxb5s9Qg
+PATCH {{local}}/api/users/67739d64271d2d1cb6972da2
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzczOWQ2NDI3MWQyZDFjYjY5NzJkYTIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NjMwNTgzfQ.7lftJ-em8nobPzsFekadfOw3xhwf5bqV4A5WUqlEgM4

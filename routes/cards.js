@@ -74,16 +74,16 @@ router.put("/:id", [authMW], async (req, res) => {
   res.send(card);
 });
 
-router.get("/:id", async (req, res) => {
-  const card = await Card.find({ _id: req.params.id });
-
-  res.send(card);
-});
-
 router.get("/my-cards", authMW, async (req, res) => {
   const myCards = await Card.find({ user_id: req.user._id });
 
   res.json(myCards);
+});
+
+router.get("/:id", async (req, res) => {
+  const card = await Card.find({ _id: req.params.id });
+
+  res.send(card);
 });
 
 router.get("/", async (req, res) => {
