@@ -19,7 +19,9 @@ connect();
 async function connect() {
   try {
     await mongoose
-      .connect("mongodb://localhost:27017/serverSideProject")
+      .connect(
+        "mongodb+srv://noamab22:p2kspCA3Io0669uY@cluster0.m2gxd.mongodb.net/projectAPI"
+      )
       .then(() => {
         console.log("connected to the database");
         app.listen(PORT, () => {
