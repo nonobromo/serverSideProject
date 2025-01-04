@@ -3,11 +3,14 @@ const router = express.Router();
 const _ = require("lodash");
 const bcrypt = require("bcrypt");
 
-const { User, validateUserSchema } = require("../models/users");
+const { User, validateUserSchema, validateUserEditSchema } = require("../models/users");
 const adminAuth = require("../middleware/adminAuth");
 
 const authMW = require("../middleware/auth");
 const userAuth = require("../middleware/userAuth");
+const userAdminAuth = require("../middleware/userAdminAuth.users")
+const { createNewLogFile } = require("../logs/logs");
+
 
 router.patch("/:id", [authMW, userAuth], async (req, res) => {
   const user = await User.findOne({ _id: req.user._id });
@@ -24,7 +27,7 @@ router.patch("/:id", [authMW, userAuth], async (req, res) => {
   res.send(user);
 });
 
-router.delete("/:id", [authMW, userAuth], async (req, res) => {
+router.delete("/:id", [authMW, userAdminAuth], async (req, res) => {
   const user = await User.findOneAndDelete({ _id: req.params.id });
 
   if (!user) {
@@ -36,7 +39,7 @@ router.delete("/:id", [authMW, userAuth], async (req, res) => {
 });
 
 router.put("/:id", [authMW, userAuth], async (req, res) => {
-  const { error } = validateUserSchema(req.body);
+  const { error } = validateUserEditSchema(req.body);
 
   if (error) {
     res.status(400).send(error.details[0].message);
@@ -49,13 +52,13 @@ router.put("/:id", [authMW, userAuth], async (req, res) => {
   res.send(user);
 });
 
-router.get("/allUsers", [authMW, userAuth], async (req, res) => {
+router.get("/allUsers", [authMW, adminAuth], async (req, res) => {
   const users = await User.find();
 
   res.json(users);
 });
 
-router.get("/:id", [authMW, userAuth], async (req, res) => {
+router.get("/:id", [authMW, userAdminAuth], async (req, res) => {
   res.json(
     await User.findById(
       { _id: req.params.id, user_id: req.user._id },
@@ -78,12 +81,13 @@ router.post("/", async (req, res) => {
 
   if (user) {
     res.status(400).send("User Already Registered to our system");
+    createNewLogFile(`A guest tried to create a user \n with an email: ${req.body.email} that already exists`)
     return;
   }
 
   //process
 
-  user = await new User(req.body);
+  user = new User(req.body);
   user.password = await bcrypt.hash(user.password, 12);
 
   await user.save();

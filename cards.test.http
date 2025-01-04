@@ -1,24 +1,21 @@
-@biztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNzAyNjJhYWMzMTM1OTNjMjAxODgiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1MjkzMzY5fQ.YrDkgP6GWsR8OS8kvBRzCeC7bemF-FQBCGEXQ60Itnc
-@admintoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMDMwODQ4NDE4MmJhOWNkYzMzNDAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzUyOTk0NjZ9.RohlcqrTl6tMxUAm3ZeYYN_OOQ1CvP8T8z_oI43KfxI
-
-@otherbiztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmZWVmODkzNGRlN2M2MTY1N2FhZWQiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1Mzg4OTQ3fQ.GeIE0PwYO5LLBjveJ0IXU2rXF90VoSeMvYzZDMsEwyw
-
-@normaltoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmZWVkODkzNGRlN2M2MTY1N2FhZWEiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTczNTYzMTc0Nn0.VG7akF0U5EjBI7W8y9-vCesIJH5YGmF5jhZe_B8SIHA
+@admintoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc2Yzc3ZDY5ODg3YTlmMzRiZGE3N2EiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1OTI4NzY1fQ.or7l-fiwd36EVvePUXGObfk8OmesFJRDCjE8Eo0j3Es
+@biztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc2Yzc3ZDY5ODg3YTlmMzRiZGE3N2IiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1OTI4Nzk2fQ.yriW04iwoQTx04HCghE2t7xZK5V1hUg829wfbu3hYYs
+@normaltoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YmVmMzU3OTliNGExNDdjZmYzZGUiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTczNTkyOTM2Mn0.F-yvTQ3WJVwbuDq43fqWaT2n5g5lJtZZ7jJEniYSY8c
 
 @local=http://localhost:4000
 
 ###
 
 POST {{local}}/api/cards
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNmZiYjJhYWMzMTM1OTNjMjAxODIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NjMyMDU5fQ.5kHAi1T71Z4YZxtV0tamddzwD7NZ_2gupkFlqUE68SY
+x-auth-token: {{biztoken}}
 Content-Type: application/json
 
 {
-    "title": "Walter White",
+    "title": "Saul Goodmen",
     "subtitle": "breaking bad",
-    "description": "High School Chemistiry teacher",
+    "description": "Better Call Saul!",
     "phone": "050120134",
-    "email": "saul.email.com",
+    "email": "jesse.email.com",
     "web": "https://jsonplaceholder.typicode.com/",
     "image": {
         "url": "https://blog.stoplight.io/wp-content/uploads/2023/11/20190403-JSON-Generator-for-Mock-API-Data.png",
@@ -45,12 +42,12 @@ x-auth-token: {{biztoken}}
 
 ###
 
-GET {{local}}/api/cards/676e820ed77c6c13537e2368
+GET {{local}}/api/cards/67782ed3a4f8778d79cddceb
 
 ###
 
-PUT {{local}}/api/cards/67739fb8eb5e3a9d8db7071e
-x-auth-token: {{otherbiztoken}}
+PUT {{local}}/api/cards/67782ed3a4f8778d79cddceb
+x-auth-token: {{biztoken}}
 Content-Type: application/json
 
 {
@@ -76,10 +73,15 @@ Content-Type: application/json
 
 ###
 
-DELETE {{local}}/api/cards/6773a510ae5bf62fc65a205d
-x-auth-token: {{otherbiztoken}}
+DELETE {{local}}/api/cards/67782ed3a4f8778d79cddceb
+x-auth-token: {{biztoken}}
 
 ###
 
-PATCH {{local}}/api/cards/67700bfe659c2d0f392316b2
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmZWVmODkzNGRlN2M2MTY1N2FhZWQiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1Mzk5NDkyfQ.pYbB02Dvhlp3uJK5Qp-Bkw27bfFK8-MzleB_j_SYmn8
+PATCH {{local}}/api/cards/6779238ba4f8778d79cddd1f
+x-auth-token: {{admintoken}}
+
+###
+
+PATCH {{local}}/api/cards/update/6779238ba4f8778d79cddd1f
+x-auth-token: {{admintoken}}

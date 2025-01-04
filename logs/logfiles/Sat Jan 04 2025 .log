@@ -1,0 +1,6 @@
+2025-01-04T14:50:19.176Z A guest tried to create a user 
+ with an email: john@email.com that already exists
+2025-01-04T15:00:14.519Z Login attempt with an invalid password
+2025-01-04T15:00:36.178Z Login attempt with an invalid email
+2025-01-04T15:07:58.232Z A Non admin type user tried to fetch all users 
+ user id: 6776c77d69887a9f34bda77b

@@ -7,6 +7,32 @@ const {
   Card,
   generateRandomBizNumber,
 } = require("../models/cards");
+const adminAuth = require("../middleware/adminAuth");
+
+router.patch("/update/:id", [authMW, adminAuth], async (req,res)=>{
+  try{
+    const card =await Card.findOne({_id: req.params.id})
+
+    if (!card){
+      res.status(400).send("The requested card was not found");
+      return
+    }
+     const newRandomNumber = await generateRandomBizNumber()
+
+     const doesNumberExist = await Card.findOne({bizNumber: newRandomNumber})
+
+     if (doesNumberExist){
+      res.status(400).send("Biz Number already exists");
+      return
+     }
+
+     const updateOperation = await Card.findOneAndUpdate({_id: req.params.id}, {$set: {bizNumber: newRandomNumber}}, {returnDocument: "after"})
+    res.send(updateOperation)
+  }
+  catch(err){
+    res.status(500).send(err)
+  }
+})
 
 router.patch("/:id", [authMW], async (req, res) => {
   try {

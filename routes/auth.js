@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {User} = require("../models/users");
 const Joi = require("joi");
+const { createNewLogFile } = require("../logs/logs");
 
 
 router.post("/", async (req, res) =>{
@@ -24,6 +25,7 @@ const user = await User.findOne({email: req.body.email})
 
 if (!user){
     res.status(400).send("Invalid Email");
+    createNewLogFile("Login attempt with an invalid email")
     return;
 }
 
@@ -31,6 +33,7 @@ const validPassword = await bcrypt.compare(req.body.password, user.password)
 
 if(!validPassword){
     res.status(400).send("invalid password");
+    createNewLogFile("Login attempt with an invalid password")
     return;
 }
 

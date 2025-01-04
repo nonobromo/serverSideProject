@@ -1,9 +1,9 @@
-export const initialCards = [
+const initialCards = [
   {
     title: "one",
-    subTitle: "one two",
+    subtitle: "one two",
     description: "one two three",
-    phone: 4445789,
+    phone: "0503150180",
     email: "one@gmail.com",
     web: "https://www.google.com/",
     image: {
@@ -18,14 +18,13 @@ export const initialCards = [
       houseNumber: 330,
       zip: 12345,
     },
-    bizNumber: 123345,
     userId: "676844a3eaa5432d476822a5",
   },
   {
     title: "two",
-    subTitle: "two two",
+    subtitle: "two two",
     description: "one two three",
-    phone: 21123125,
+    phone: "0504120160",
     email: "two@gmail.com",
     web: "https://www.google.com/",
     image: {
@@ -40,14 +39,13 @@ export const initialCards = [
       houseNumber: 330,
       zip: 12345,
     },
-    bizNumber: 123345,
-    userId: "676844a3eaa5432d476822a5",
+    user_id: "676844a3eaa5432d476822a5",
   },
   {
     title: "three",
-    subTitle: "four five",
+    subtitle: "four five",
     description: "one two three",
-    phone: 5465423,
+    phone: "0508350480",
     email: "three@gmail.com",
     web: "https://www.google.com/",
     image: {
@@ -62,7 +60,8 @@ export const initialCards = [
       houseNumber: 330,
       zip: 12345,
     },
-    bizNumber: 123345,
-    userId: "676844a3eaa5432d476822a5",
+    user_id: "676844a3eaa5432d476822a5",
   },
 ];
+
+module.exports = {initialCards}

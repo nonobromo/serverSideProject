@@ -1,7 +1,7 @@
 @local=http://localhost:4000
-@admintoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMDMwODQ4NDE4MmJhOWNkYzMzNDAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MzUyMjY4NjR9.HR58ejjrMBFaUFobOHwShEFrKv9YjynLYbXdmtwOEQ4
-@biztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNzAyNjJhYWMzMTM1OTNjMjAxODgiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1MjI1NTIwfQ.d1LoSCJLv9hcsHU0H9gXdy7JngZgy0RMz1qGAQe2qh0
-@normaltoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZkNDZmMGEwYTIyNzdjMmE5NGJlYTgiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1MjI1MTM2fQ.Vygn-jAoNFcXJoeyd4p506CINPUM0KRKEurLm6c3mWA
+@admintoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc2Yzc3ZDY5ODg3YTlmMzRiZGE3N2EiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1OTI4NzY1fQ.or7l-fiwd36EVvePUXGObfk8OmesFJRDCjE8Eo0j3Es
+@biztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc2Yzc3ZDY5ODg3YTlmMzRiZGE3N2IiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1OTI4Nzk2fQ.yriW04iwoQTx04HCghE2t7xZK5V1hUg829wfbu3hYYs
+@normaltoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YmVmMzU3OTliNGExNDdjZmYzZGUiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1OTI4ODMzfQ.vEvRgim734qnkt8nyu5wCU4ZDZSafvG2kUr5lsGZMPI
 
 ###
 POST {{local}}/api/users
@@ -20,7 +20,8 @@ Content-Type: application/json
         "country": "Israel",
         "city": "Haifa",
         "street": "this street",
-        "houseNumber": 1
+        "houseNumber": 2,
+        "zip": "23"
     },
     "password": "Aa123456",
     "image": {
@@ -36,41 +37,40 @@ POST {{local}}/api/auth/
 Content-Type: application/json
 
 {
-    "email": "normal@email.com",
+    "email": "saul@email.com",
     "password": "Aa123456"
 }
 
 ###
 
-GET {{local}}/api/users/67739d9c271d2d1cb6972da5
-x-auth-token: {{normaltoken}}
+GET {{local}}/api/users/6777bef35799b4a147cff3de
+x-auth-token: {{biztoken}}
 ###
-
 GET {{local}}/api/users/allUsers
-x-auth-token: {{admintoken}}
+x-auth-token: {{biztoken}}
 
 ###
 
-PUT {{local}}/api/users/67739d9c271d2d1cb6972da5
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzczOWQ5YzI3MWQyZDFjYjY5NzJkYTUiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NjMwMzYyfQ.u2I_jWs2H-hnE4abWCleZR4DZ_5EANxf8P2yzdIEPIs
+PUT {{local}}/api/users/6777bef35799b4a147cff3de
+x-auth-token: {{admintoken}}
 Content-Type: application/json
 
 {
       "name": {
-        "first": "johnny",
-        "middle": "normal",
-        "last": "Doe"
+        "first": "saulll",
+        "middle": "",
+        "last": "goodmen"
     },
     "isBusiness": "true",
     "phone": "050502120",
-    "email": "john@email.com",
+    "email": "saul@email.com",
     "address": {
         "country": "Israel",
         "city": "Haifa",
         "street": "this street",
-        "houseNumber": 1
+        "houseNumber": 2,
+        "zip": 4
     },
-    "password": "Aa123456",
     "image": {
         "url": "https://i.pinimg.com/236x/33/d0/a2/33d0a23afdc4112ae4c984cb39dcad22.jpg",
         "alt": "IT WAS YOU!!!!!!!"
@@ -79,9 +79,9 @@ Content-Type: application/json
 
 ###
 
-DELETE {{local}}/api/users/67739d9c271d2d1cb6972da5
-x-auth-token: {{admintoken}}
+DELETE {{local}}/api/users/6777bef35799b4a147cff3de
+x-auth-token: {{biztoken}}
 
 ###
-PATCH {{local}}/api/users/67739d64271d2d1cb6972da2
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzczOWQ2NDI3MWQyZDFjYjY5NzJkYTIiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1NjMwNTgzfQ.7lftJ-em8nobPzsFekadfOw3xhwf5bqV4A5WUqlEgM4
+PATCH {{local}}/api/users/6777bef35799b4a147cff3de
+x-auth-token: {{admintoken}}

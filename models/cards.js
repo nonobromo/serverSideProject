@@ -4,26 +4,26 @@ const _ = require("lodash");
 
 const cardSchema = new mongoose.Schema({
   title: { type: String, required: true, minlength: 2, maxlength: 255 },
-  subtitle: { type: String, required: true, minlength: 2, maxlength: 255 },
-  description: { type: String, required: true, minlength: 2, maxlength: 255 },
-  phone: { type: String, required: true, minlength: 9, maxlength: 10 },
-  email: { type: String, required: true, minlength: 6, maxlength: 1024 },
-  web: { type: String, required: true, minlength: 20, maxlength: 1024 },
+  subtitle: { type: String, required: true, minlength: 2, maxlength: 256 },
+  description: { type: String, required: true, minlength: 2, maxlength: 1024 },
+  phone: { type: String, required: true, minlength: 9, maxlength: 11 },
+  email: { type: String, required: true, minlength: 6 },
+  web: { type: String, minlength: 14 },
   image: {
-    url: { type: String, required: true, minlength: 20, maxlength: 1024 },
-    alt: { type: String, required: true, minlength: 2, maxlength: 255 },
+    url: { type: String, required: true, minlength: 14 },
+    alt: { type: String, required: true, minlength: 2, maxlength: 256 },
   },
   address: {
-    state: { type: String, minlength: 1 },
-    country: { type: String, required: true, minlength: 2, maxlength: 256 },
-    city: { type: String, required: true, minelgtnh: 2, maxlength: 256 },
-    street: { type: String, required: true, minlength: 2, maxlength: 256 },
+    state: { type: String },
+    country: { type: String, required: true,  },
+    city: { type: String, required: true,  },
+    street: { type: String, required: true, },
     houseNumber: {
       type: Number,
       required: true,
-      minelength: 2,
+      min: 1,
     },
-    zip: { type: String, requried: true, minlength: 2 },
+    zip: { type: Number, min: 1 },
   },
   bizNumber: {
     type: Number,
@@ -50,23 +50,23 @@ async function generateRandomBizNumber() {
 
 function validateCardSchema(card) {
   const schema = Joi.object({
-    title: Joi.string().min(2).max(255).required(),
-    subtitle: Joi.string().min(2).max(255).required(),
-    description: Joi.string().min(2).max(255).required(),
-    phone: Joi.string().min(9).max(10).required(),
-    email: Joi.string().min(6).max(255).required(),
-    web: Joi.string().min(20).max(255).required(),
+    title: Joi.string().min(2).max(256).required(),
+    subtitle: Joi.string().min(2).max(256).required(),
+    description: Joi.string().min(2).max(1024).required(),
+    phone: Joi.string().min(9).max(11).required(),
+    email: Joi.string().min(5).required(),
+    web: Joi.string().min(14),
     image: Joi.object({
       url: Joi.string().min(20).max(1024).required(),
       alt: Joi.string().min(2).max(1024).required(),
     }).required(),
     address: Joi.object({
-      state: Joi.string().min(2).max(255).required(),
-      country: Joi.string().min(2).max(255).required(),
-      city: Joi.string().min(2).max(255).required(),
-      street: Joi.string().min(2).max(255).required(),
-      houseNumber: Joi.number().min(2).required(),
-      zip: Joi.string().min(1).required(),
+      state: Joi.string(),
+      country: Joi.string().required(),
+      city: Joi.string().required(),
+      street: Joi.string().required(),
+      houseNumber: Joi.number().min(1).required(),
+      zip: Joi.number().min(1).allow(""),
     }).required(),
   });
 
