@@ -8,6 +8,8 @@ const {
   generateRandomBizNumber,
 } = require("../models/cards");
 const adminAuth = require("../middleware/adminAuth");
+const { createNewLogFile } = require("../logs/logs");
+const cardAuth = require("../middleware/cardAuth");
 
 router.patch("/update/:id", [authMW, adminAuth], async (req,res)=>{
   try{
@@ -68,9 +70,12 @@ router.delete("/:id", [authMW], async (req, res) => {
     }
 
     if (card.user_id.toString() !== req.user._id && !req.user.isAdmin) {
-      return res
+      
+      createNewLogFile(`User ${req.user._id} tried to delete a card that he didn't create`)
+      res
         .status(403)
         .send("You must be the creator of this card or an admin to delete it");
+        return
     }
 
     const deletedCard = await Card.findByIdAndDelete(cardId);
@@ -82,7 +87,7 @@ router.delete("/:id", [authMW], async (req, res) => {
   }
 });
 
-router.put("/:id", [authMW], async (req, res) => {
+router.put("/:id", [authMW, cardAuth], async (req, res) => {
   const { error } = validateCardSchema(req.body);
 
   if (error) {
@@ -93,15 +98,19 @@ router.put("/:id", [authMW], async (req, res) => {
     returnDocument: "after",
   });
 
-  if (card.user_id.toString() !== req.user._id) {
-    res.status(400).send("Only the business owner can edit this card");
-    return;
-  }
   res.send(card);
 });
 
 router.get("/my-cards", authMW, async (req, res) => {
   const myCards = await Card.find({ user_id: req.user._id });
+
+  const invalidCards = myCards.filter(card => card.user_id.toString() !== req.user._id);
+
+  if (invalidCards.length > 0){
+    res.status(401).send("You are trying to fetch cards that you didn't create");
+    createNewLogFile(`user: ${req.user._id} tried to fetch cards he didn't create`)
+    return
+  }
 
   res.json(myCards);
 });

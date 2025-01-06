@@ -4,3 +4,31 @@
 2025-01-04T15:00:36.178Z Login attempt with an invalid email
 2025-01-04T15:07:58.232Z A Non admin type user tried to fetch all users 
  user id: 6776c77d69887a9f34bda77b
+2025-01-04T16:42:25.690Z A guest tried to create a user 
+ with an email: john@email.com that already exists
+2025-01-04T16:43:02.940Z Login attempt with an invalid email
+2025-01-04T16:43:28.835Z Login attempt with an invalid email
+2025-01-04T16:43:46.094Z Login attempt with an invalid password
+2025-01-04T16:44:18.268Z A Non admin type user tried to fetch all users 
+ user id: 6776c77d69887a9f34bda77b
+2025-01-04T16:45:08.304Z The user with the id 6776c77d69887a9f34bda77b tried to fetch another users profile with the id of 6777bef35799b4a147cff3de
+2025-01-04T16:45:22.450Z The user with the id 6776c77d69887a9f34bda77b tried to fetch another users profile with the id of 6777bef35799b4a147cff3de
+2025-01-04T16:51:25.824Z A User with the id of: 6776c77d69887a9f34bda77a 
+ tried to edit the user with the id of: 
+ 6777bef35799b4a147cff3de
+2025-01-04T16:51:52.166Z A User with the id of: 6776c77d69887a9f34bda77b 
+ tried to edit the user with the id of: 
+ 6777bef35799b4a147cff3de
+2025-01-04T16:53:49.438Z A User with the id of: 6776c77d69887a9f34bda77a 
+ tried to edit the user with the id of: 
+ 6777bef35799b4a147cff3de
+2025-01-04T16:56:34.839Z The user with the id 6776c77d69887a9f34bda77b tried to fetch another users profile with the id of 6777bef35799b4a147cff3de
+2025-01-04T16:58:20.690Z Login attempt with an invalid email
+2025-01-04T16:58:22.865Z Login attempt with an invalid email
+2025-01-04T16:58:28.661Z Login attempt with an invalid email
+2025-01-04T16:58:29.465Z Login attempt with an invalid email
+2025-01-04T16:59:43.695Z The user with the id 6776c77d69887a9f34bda77b tried to fetch another users profile with the id of 6779688400b050b5d937cb89
+2025-01-04T17:06:57.943Z A guest tried to create a user 
+ with an email: false@email.com that already exists
+2025-01-04T17:14:00.865Z no
+2025-01-04T17:14:45.712Z user: 67796aa400b050b5d937cb92 which is not a business user tried to create a business card

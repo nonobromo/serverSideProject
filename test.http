@@ -1,7 +1,7 @@
 @local=http://localhost:4000
 @admintoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc2Yzc3ZDY5ODg3YTlmMzRiZGE3N2EiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzM1OTI4NzY1fQ.or7l-fiwd36EVvePUXGObfk8OmesFJRDCjE8Eo0j3Es
 @biztoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc2Yzc3ZDY5ODg3YTlmMzRiZGE3N2IiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1OTI4Nzk2fQ.yriW04iwoQTx04HCghE2t7xZK5V1hUg829wfbu3hYYs
-@normaltoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc3YmVmMzU3OTliNGExNDdjZmYzZGUiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzM1OTI4ODMzfQ.vEvRgim734qnkt8nyu5wCU4ZDZSafvG2kUr5lsGZMPI
+@normaltoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc5Njg4NDAwYjA1MGI1ZDkzN2NiODkiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTczNjAwOTkzOX0.xlHHNGi3Tpi2kZSxGUHAtEZIx7KfikXLtdVTLHzu6fI
 
 ###
 POST {{local}}/api/users
@@ -9,13 +9,13 @@ Content-Type: application/json
 
 {
     "name": {
-        "first": "john",
-        "middle": "normal",
-        "last": "Doe"
+        "first": "saul",
+        "middle": "",
+        "last": "goodmen"
     },
-    "isBusiness": "true",
+    "isBusiness": "false",
     "phone": "050502120",
-    "email": "john@email.com",
+    "email": "false@email.com",
     "address": {
         "country": "Israel",
         "city": "Haifa",
@@ -37,14 +37,15 @@ POST {{local}}/api/auth/
 Content-Type: application/json
 
 {
-    "email": "saul@email.com",
+    "email": "false@email.com",
     "password": "Aa123456"
 }
 
 ###
 
 GET {{local}}/api/users/6777bef35799b4a147cff3de
-x-auth-token: {{biztoken}}
+x-auth-token: {{admintoken}}
+
 ###
 GET {{local}}/api/users/allUsers
 x-auth-token: {{biztoken}}
@@ -52,7 +53,7 @@ x-auth-token: {{biztoken}}
 ###
 
 PUT {{local}}/api/users/6777bef35799b4a147cff3de
-x-auth-token: {{admintoken}}
+x-auth-token: {{normaltoken}}
 Content-Type: application/json
 
 {
@@ -79,9 +80,9 @@ Content-Type: application/json
 
 ###
 
-DELETE {{local}}/api/users/6777bef35799b4a147cff3de
-x-auth-token: {{biztoken}}
+DELETE {{local}}/api/users/6779688400b050b5d937cb89
+x-auth-token: {{admintoken}}
 
 ###
 PATCH {{local}}/api/users/6777bef35799b4a147cff3de
-x-auth-token: {{admintoken}}
+x-auth-token: {{normaltoken}}

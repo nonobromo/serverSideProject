@@ -1,0 +1,11 @@
+2025-01-05T04:15:42.935Z A Non admin type user tried to fetch all users 
+ user id: 6776c77d69887a9f34bda77b
+2025-01-05T04:29:37.898Z user: 67796aa400b050b5d937cb92 which is not a business user tried to create a business card
+2025-01-05T04:47:42.663Z A User with the id of: 67796aa400b050b5d937cb92 
+ tried to edit the card with the id of: 
+ 6779238ba4f8778d79cddd1f
+2025-01-05T04:50:01.602Z A User with the id of: 6776c77d69887a9f34bda77a 
+ tried to edit the card with the id of: 
+ 6779238ba4f8778d79cddd1f
+2025-01-05T14:35:38.651Z A non autherized user tried to send a http request to the server
+2025-01-05T14:50:37.455Z User 67796aa400b050b5d937cb92 tried to delete a card that he didn't create
