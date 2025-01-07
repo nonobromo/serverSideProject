@@ -3,14 +3,17 @@ const router = express.Router();
 const _ = require("lodash");
 const bcrypt = require("bcrypt");
 
-const { User, validateUserSchema, validateUserEditSchema } = require("../models/users");
+const {
+  User,
+  validateUserSchema,
+  validateUserEditSchema,
+} = require("../models/users");
 const adminAuth = require("../middleware/adminAuth");
 
 const authMW = require("../middleware/auth");
 const userAuth = require("../middleware/userAuth");
-const userAdminAuth = require("../middleware/userAdminAuth.users")
+const userAdminAuth = require("../middleware/userAdminAuth.users");
 const { createNewLogFile } = require("../logs/logs");
-
 
 router.patch("/:id", [authMW, userAuth], async (req, res) => {
   const user = await User.findOne({ _id: req.user._id });
@@ -46,10 +49,11 @@ router.put("/:id", [authMW, userAuth], async (req, res) => {
     return;
   }
 
-  const user = await User.findOneAndUpdate({ _id: req.params.id }, req.body, {
+  const user = await User.findByIdAndUpdate({ _id: req.params.id }, req.body, {
     returnDocument: "after",
   });
-  res.send(user);
+
+  res.status(200).send(user);
 });
 
 router.get("/allUsers", [authMW, adminAuth], async (req, res) => {
@@ -59,12 +63,17 @@ router.get("/allUsers", [authMW, adminAuth], async (req, res) => {
 });
 
 router.get("/:id", [authMW, userAdminAuth], async (req, res) => {
-  res.json(
-    await User.findById(
-      { _id: req.params.id, user_id: req.user._id },
-      { password: 0 }
-    )
-  );
+  const user = await User.findById({ _id: req.params.id }, { password: 0 });
+
+  if (!user) {
+    createNewLogFile(
+      `User with the id of ${req.user._id} was not found in the database`
+    );
+    res.status(404).send("User Not Found");
+    return;
+  }
+
+  res.status(200).json(user);
 });
 
 router.post("/", async (req, res) => {
@@ -81,7 +90,9 @@ router.post("/", async (req, res) => {
 
   if (user) {
     res.status(400).send("User Already Registered to our system");
-    createNewLogFile(`A guest tried to create a user \n with an email: ${req.body.email} that already exists`)
+    createNewLogFile(
+      `A guest tried to create a user \n with an email: ${req.body.email} that already exists`
+    );
     return;
   }
 
@@ -94,7 +105,7 @@ router.post("/", async (req, res) => {
 
   //response
 
-  res.json(user);
+  res.status(200).json(user);
 });
 
 module.exports = router;

@@ -1,2 +1,134 @@
 2025-01-06T14:56:02.012Z A guest tried to create a user 
  with an email: false@email.com that already exists
+2025-01-06T17:03:31.178Z A guest tried to create a user 
+ with an email: false@email.com that already exists
+2025-01-06T17:21:05.601Z Login attempt with an invalid password
+2025-01-06T17:22:39.540Z A Non admin type user tried to fetch all users 
+ user id: 6776c77d69887a9f34bda77b
+2025-01-06T17:22:54.721Z A non autherized user tried to send a http request to the server
+2025-01-06T17:26:47.055Z Login attempt with an invalid password
+2025-01-06T17:41:55.103Z User with the id of 6776c77d69887a9f34bda77a was not found in the database
+2025-01-06T17:42:03.306Z User with the id of 6776c77d69887a9f34bda77a was not found in the database
+2025-01-06T17:48:38.046Z A User with the id of: 6779688400b050b5d937cb89 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T17:48:41.045Z A User with the id of: 6779688400b050b5d937cb89 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T17:48:59.600Z A User with the id of: 6776c77d69887a9f34bda77b 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T17:49:00.344Z A User with the id of: 6776c77d69887a9f34bda77b 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T17:49:00.943Z A User with the id of: 6776c77d69887a9f34bda77b 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T17:49:38.221Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T17:49:59.987Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T17:50:00.653Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T17:50:48.699Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T17:51:22.957Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T18:02:26.698Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e2d
+2025-01-06T18:03:30.091Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d2
+2025-01-06T18:07:53.072Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d2
+2025-01-06T18:07:55.853Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d2
+2025-01-06T18:07:56.359Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d2
+2025-01-06T18:07:56.807Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d2
+2025-01-06T18:14:06.705Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d2
+2025-01-06T18:14:28.281Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d223
+2025-01-06T18:14:29.325Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d223
+2025-01-06T18:14:29.949Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d223
+2025-01-06T18:14:54.126Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d223
+2025-01-06T18:14:55.619Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d223
+2025-01-06T18:15:06.243Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d223
+2025-01-06T18:15:07.436Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d223
+2025-01-06T18:15:56.895Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d223
+2025-01-06T18:16:37.858Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 1234
+2025-01-06T18:16:38.500Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 1234
+2025-01-06T18:16:39.006Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 1234
+2025-01-06T18:19:22.666Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 1234
+2025-01-06T18:19:25.409Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 1234
+2025-01-06T18:19:26.017Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 1234
+2025-01-06T18:20:01.894Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 1234
+2025-01-06T18:20:15.787Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T18:20:55.970Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T18:20:57.698Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4e
+2025-01-06T18:24:52.208Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9d2c3c8e4d
+2025-01-06T18:25:35.252Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9d2c3c8e4d
+2025-01-06T18:25:37.782Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9d2c3c8e4d
+2025-01-06T18:25:39.971Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9d2c3c8e4d
+2025-01-06T18:25:41.225Z A User with the id of: 677bf931ef4c0b9dbc3c8e4d 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9d2c3c8e4d
+2025-01-06T18:28:30.009Z A User with the id of: 6779688400b050b5d937cb89 
+ tried to edit the user with the id of: 
+ 677bf931ef4c0b9dbc3c8e4d
