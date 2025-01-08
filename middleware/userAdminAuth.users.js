@@ -3,7 +3,6 @@ const { createNewLogFile } = require("../logs/logs");
 module.exports = async (req, res, next) => {
   const userId = req.user;
 
-  console.log(userId._id, req.params.id);
   try {
     if (userId._id === req.params.id || req.user.isAdmin) {
       next();

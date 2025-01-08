@@ -2,7 +2,6 @@ const { createNewLogFile } = require("../logs/logs");
 
 module.exports = async (req, res, next) => {
   const userId = req.user;
-  console.log(userId);
   try {
     if (userId.isBusiness || userId.isAdmin) {
       next();
