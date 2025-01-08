@@ -14,6 +14,7 @@ When submitting this project, a `.env` file will be attached. It includes the fo
 - **COMPASS_URL**: Connection string for MongoDB Compass.
 - **ENVIRONMENT**: Sets the working environment. If set to `local`, it uses MongoDB Compass; if set to `cloud`, it uses MongoDB Atlas.
 
+add the .env to the projects folder
 ---
 
 ## **Libraries Used**
@@ -29,6 +30,7 @@ When submitting this project, a `.env` file will be attached. It includes the fo
 - `morgan`  
 - `nodemon`  
 
+ To install these write into the teminal npm install for the node_modules folder
 ---
 
 ## **Database Collections**
