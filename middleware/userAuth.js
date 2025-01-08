@@ -16,7 +16,6 @@ module.exports = async (req, res, next) => {
       res.status(400).send("a user is already registred with this email")
       return
     }
-    console.log(req.params.id);
     if (userId._id.toString() === req.params.id) {
       next();
     } else {

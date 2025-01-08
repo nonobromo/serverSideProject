@@ -42,7 +42,7 @@ async function connect() {
         newUser.password = await bcrypt.hash(newUser.password, 12);
         await newUser.save();
       });
-      console.log(dbCards.length);
+
       initialCards.forEach(async (card) => {
         if (dbCards.length >= 3) {
           return;
