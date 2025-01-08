@@ -7,7 +7,7 @@
     },
     phone: "0505250255",
     email: "walter@email.com",
-    password: "Aa123456",
+    password: "Aa123456!",
     image: {
       url: "https://upload.wikimedia.org/wikipedia/en/e/ee/Front_%26_Back_Face_of_iPhone_16_Pro_Max.png",
       alt: "https://upload.wikimedia.org/wikipedia/en/e/ee/Front_%26_Back_Face_of_iPhone_16_Pro_Max.png",
@@ -31,7 +31,7 @@
     },
     phone: "0505150130",
     email: "jesse@email.com",
-    password: "Aa123456",
+    password: "Aa123456!",
     image: {
       url: "https://upload.wikimedia.org/wikipedia/en/e/ee/Front_%26_Back_Face_of_iPhone_16_Pro_Max.png",
       alt: "https://upload.wikimedia.org/wikipedia/en/e/ee/Front_%26_Back_Face_of_iPhone_16_Pro_Max.png",
@@ -55,7 +55,7 @@
     },
     phone: "0506230280",
     email: "saul@email.com",
-    password: "Aa123456",
+    password: "Aa123456!",
     image: {
       url: "https://upload.wikimedia.org/wikipedia/en/e/ee/Front_%26_Back_Face_of_iPhone_16_Pro_Max.png",
       alt: "https://upload.wikimedia.org/wikipedia/en/e/ee/Front_%26_Back_Face_of_iPhone_16_Pro_Max.png",

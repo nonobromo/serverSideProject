@@ -1,0 +1,87 @@
+@admintoken=
+@biztoken=
+@normaltoken=
+
+@local=http://localhost:4000
+
+###
+
+POST {{local}}/api/cards
+x-auth-token: {{biztoken}}
+Content-Type: application/json
+
+{
+    "title": "Walter White",
+    "subtitle": "breaking bad",
+    "description": "I AM THE ONE WHO KNOCKS",
+    "phone": "050120134",
+    "email": "jesse.email.com",
+    "web": "https://jsonplaceholder.typicode.com/",
+    "image": {
+        "url": "https://blog.stoplight.io/wp-content/uploads/2023/11/20190403-JSON-Generator-for-Mock-API-Data.png",
+        "alt": "api"
+    },
+    "address": {
+        "state": "new mexico",
+        "country": "united states",
+        "city": "alberququie",
+        "street": "nowherestr",
+        "houseNumber": 10,
+        "zip": "23"
+    }
+}
+
+###
+
+GET {{local}}/api/cards
+
+###
+
+GET {{local}}/api/cards/my-cards
+x-auth-token: 
+
+###
+
+GET {{local}}/api/cards/
+
+###
+
+PUT {{local}}/api/cards/
+x-auth-token: 
+Content-Type: application/json
+
+{
+    "title": "",
+    "subtitle": "",
+    "description": "",
+    "phone": "",
+    "email": "",
+    "web": "",
+    "image": {
+        "url": "",
+        "alt": ""
+    },
+    "address": {
+        "state": "",
+        "country": "",
+        "city": "",
+        "street": "",
+        "houseNumber": ,
+        "zip": ""
+    }
+}
+
+###
+
+DELETE {{local}}/api/cards/
+x-auth-token: 
+
+###
+
+PATCH {{local}}/api/cards/
+x-auth-token: 
+
+###
+
+PATCH {{local}}/api/cards/update/
+x-auth-token: {{admintoken}}

@@ -1,0 +1,57 @@
+2025-01-07T10:01:16.929Z A User with the id of: 6779688400b050b5d937cb89 
+ tried to edit the user with the id of: 
+ 67796bae80d17922b21b40c2
+2025-01-07T10:02:00.264Z A User with the id of: 6779688400b050b5d937cb89 
+ tried to edit the user with the id of: 
+ 67796bae80d17922b21b40c2
+2025-01-07T10:02:52.256Z A non autherized user tried to send a http request to the server
+2025-01-07T10:21:18.743Z A guest tried to create a user 
+ with an email: saulgood@email.com that already exists
+2025-01-07T10:21:56.411Z Login attempt with an invalid password
+2025-01-07T10:22:03.538Z Login attempt with an invalid password
+2025-01-07T10:23:08.539Z Login attempt with an invalid password
+2025-01-07T10:23:09.489Z Login attempt with an invalid password
+2025-01-07T10:23:13.837Z Login attempt with an invalid password
+2025-01-07T10:23:14.563Z Login attempt with an invalid password
+2025-01-07T12:57:54.369Z A non autherized user tried to send a http request to the server
+2025-01-07T12:58:03.076Z A non autherized user tried to send a http request to the server
+2025-01-07T12:58:22.097Z Login attempt with an invalid password
+2025-01-07T13:03:54.066Z Login attempt with an invalid password
+2025-01-07T13:03:56.175Z Login attempt with an invalid password
+2025-01-07T13:03:56.822Z Login attempt with an invalid password
+2025-01-07T13:03:57.564Z Login attempt with an invalid password
+2025-01-07T13:03:58.124Z Login attempt with an invalid password
+2025-01-07T13:03:58.827Z Login attempt with an invalid password
+2025-01-07T19:35:23.637Z A User with the id of: 677d25d5c97e8b2f1fc16a13 
+ tried to edit the user with the id of: 
+ 677d25d5c97e8b2f1fc16a15
+2025-01-07T19:35:57.259Z A User with the id of: 677d25d5c97e8b2f1fc16a13 
+ tried to edit the user with the id of: 
+ 677d25d5c97e8b2f1fc16a15
+2025-01-07T19:36:57.112Z A User with the id of: 677d25d5c97e8b2f1fc16a13 
+ tried to edit the user with the id of: 
+ 677d25d5c97e8b2f1fc16a15
+2025-01-07T19:37:07.567Z A User with the id of: 677d25d5c97e8b2f1fc16a13 
+ tried to edit the user with the id of: 
+ 677d25d5c97e8b2f1fc16a15
+2025-01-07T19:45:04.492Z A User with the id of: 677d25d5c97e8b2f1fc16a14 
+ tried to edit the user with the id of: 
+ 677d25d5c97e8b2f1fc16a15
+2025-01-07T19:45:32.284Z A User with the id of: 677d25d5c97e8b2f1fc16a13 
+ tried to edit the user with the id of: 
+ 677d25d5c97e8b2f1fc16a15
+2025-01-07T19:45:34.137Z A User with the id of: 677d25d5c97e8b2f1fc16a13 
+ tried to edit the user with the id of: 
+ 677d25d5c97e8b2f1fc16a15
+2025-01-07T19:45:48.358Z The user with the id 677d25d5c97e8b2f1fc16a14 tried to fetch another users profile with the id of 6779688400b050b5d937cb89
+2025-01-07T19:47:21.573Z The user with the id 677d25d5c97e8b2f1fc16a14 tried to fetch another users profile with the id of 677d25d5c97e8b2f1fc16a15
+2025-01-07T19:50:46.262Z user: 67796aa400b050b5d937cb92 which is not a business user tried to create a business card
+2025-01-07T20:07:42.411Z card with the id of 67782ed3a4f8778d79cddceb was not found in the database
+2025-01-07T20:07:43.667Z card with the id of 67782ed3a4f8778d79cddceb was not found in the database
+2025-01-07T20:08:43.504Z user: 67796aa400b050b5d937cb92 which is not a business user tried to create a business card
+2025-01-07T20:10:03.309Z A User with the id of: 6776c77d69887a9f34bda77a 
+ tried to edit the card with the id of: 
+ 677d85d07cbc7b0cb3bcb2c1
+2025-01-07T20:10:09.415Z A non autherized user tried to send a http request to the server
+2025-01-07T20:11:26.897Z A non autherized user tried to send a http request to the server
+2025-01-07T20:12:20.000Z User 67796aa400b050b5d937cb92 tried to delete a card that he didn't create

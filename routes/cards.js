@@ -116,9 +116,15 @@ router.get("/my-cards", authMW, async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  const card = await Card.find({ _id: req.params.id });
+  const card = await Card.findById(req.params.id );
 
-  res.send(card);
+  if (!card){
+    createNewLogFile(`card with the id of ${req.params.id} was not found in the database`)
+    res.status(404).send("Card not found");
+    return
+  }
+
+  res.status(200).send(card);
 });
 
 router.get("/", async (req, res) => {
@@ -141,7 +147,7 @@ router.post("/", [authMW, businessAuth], async (req, res) => {
     bizNumber: await generateRandomBizNumber(),
   }).save();
 
-  res.json(card);
+  res.status(201).json(card);
 });
 
 module.exports = router;

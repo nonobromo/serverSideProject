@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 const {
   User,
   validateUserSchema,
-  validateUserEditSchema,
+  validateUserEditSchema
 } = require("../models/users");
 const adminAuth = require("../middleware/adminAuth");
 
@@ -38,7 +38,7 @@ router.delete("/:id", [authMW, userAdminAuth], async (req, res) => {
     return;
   }
 
-  res.send(`The user: ${user.name.first}, ${user.name.last} was deleted`);
+  res.send(user);
 });
 
 router.put("/:id", [authMW, userAuth], async (req, res) => {
@@ -101,11 +101,12 @@ router.post("/", async (req, res) => {
   user = new User(req.body);
   user.password = await bcrypt.hash(user.password, 12);
 
+
   await user.save();
 
   //response
 
-  res.status(200).json(user);
+  res.status(201).json(user);
 });
 
 module.exports = router;

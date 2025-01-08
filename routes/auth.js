@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
     process.env.JWT_TOKEN
   );
 
-  res.status(200).send({
+  res.status(201).send({
     token,
   });
 });

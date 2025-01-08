@@ -5,10 +5,16 @@ module.exports = async (req, res, next) => {
   const userId = req.user;
 
   const user = await User.findById(req.params.id);
+  const userEmail = await User.findOne({email: req.body.email})
   try {
     if (!user) {
       res.status(404).send("User not found");
       return;
+    }
+
+    if(userEmail){
+      res.status(400).send("a user is already registred with this email")
+      return
     }
     console.log(req.params.id);
     if (userId._id.toString() === req.params.id) {

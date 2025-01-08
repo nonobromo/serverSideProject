@@ -1,0 +1,83 @@
+@local=http://localhost:4000
+@admintoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdlY2M2ZTg4YTBmNWUxODJkZTcyMTIiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTczNjM2NTA1NH0.bnK1esbs5EPMwNSKg6d19P2tuLRTsK_C510KSfvl-ZQ
+@biztoken=
+@normaltoken=
+
+###
+POST {{local}}/api/users
+Content-Type: application/json
+
+{
+    "name": {
+        "first": "noam",
+        "middle": "",
+        "last": "abra"
+    },
+    "phone": "050120132",
+    "email": "noam@email.com",
+    "password": "Aa123456!",
+    "address": {
+        "country": "israel",
+        "city": "haifa",
+        "street": "hadar",
+        "houseNumber": 12,
+        "zip":"23"
+    },
+    "isBusiness": "true"
+}
+
+
+###
+
+POST {{local}}/api/auth/
+Content-Type: application/json
+
+{
+    "email": "saul@email.com",
+    "password": "Aa123456!"
+}
+
+###
+
+GET {{local}}/api/users/
+x-auth-token: 
+
+###
+GET {{local}}/api/users/allUsers
+x-auth-token:
+
+###
+
+PUT {{local}}/api/users/
+x-auth-token: 
+Content-Type: application/json
+
+{
+      "name": {
+        "first": "",
+        "middle": "",
+        "last": ""
+    },
+    "phone": "",
+    "email": "",
+    "address": {
+        "country": "",
+        "city": "",
+        "street": "",
+        "houseNumber": ,
+        "zip": ""
+    },
+    "image": {
+        "url": "",
+        "alt": ""
+    }
+}
+
+###
+
+DELETE {{local}}/api/users/
+x-auth-token: 
+
+###
+PATCH {{local}}/api/users/
+x-auth-token: 
